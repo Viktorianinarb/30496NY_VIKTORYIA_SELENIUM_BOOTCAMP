@@ -30,7 +30,7 @@ public class ExcelData {
     // region Readers
     /**
      * Read all rows and columns (String values only) and return the results as a multi-dimensional String Array
-     *
+     * <p>
      * This function does not read the header row, and starts reading from row 2
      *
      * @param sheetName Sheet name to read from
@@ -140,10 +140,11 @@ public class ExcelData {
      * Read all cells in the last row (integer values only) and return the results as an integer Array. This method
      * is most likely to be used when there is only 1 row in the sheet
      *
-     * @param sheetName Sheet name to read from
+     * @param sheetName     Sheet name to read from
+     * @param testLocations
      * @return All populated cells (integer values only) in the last row of the sheet
      */
-    public int[] readIntegerArray(String sheetName) {
+    public int[] readIntegerArray(String sheetName, String testLocations) {
         int[] data;
         File file = new File(this.filePath);
 

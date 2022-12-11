@@ -32,6 +32,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 
+import static com.sun.tools.doclint.Entity.prop;
+
 public class BasePage {
 
     Map<Object, String> dbConfig = BaseConfig.databaseConfig();
@@ -82,7 +84,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://espn.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.bmwusa.com/") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
