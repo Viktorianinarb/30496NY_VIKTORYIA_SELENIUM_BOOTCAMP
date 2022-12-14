@@ -8,7 +8,7 @@ public class TestFlightBookingFunctionality extends BasePage {
     String leavingFromDestination = testData[0][0];
     String goingToDestination = testData[0][1];
     @Test
-    public void testFlightBooking() throws InterruptedException {
+    public void testFlightBooking() {
         Homepage homepage = new Homepage();
         homepage.clickOnFlights();
         homepage.enterLeavingFromDestination(leavingFromDestination);
@@ -18,6 +18,5 @@ public class TestFlightBookingFunctionality extends BasePage {
         //Website detects that it is a robot and shows mistake
         Assert.assertTrue(true);
 
-        Thread.sleep(2000);
     }
 }
