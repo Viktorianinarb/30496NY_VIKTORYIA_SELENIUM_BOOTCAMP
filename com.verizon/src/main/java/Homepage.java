@@ -23,31 +23,44 @@ public class Homepage extends BasePage {
     @FindBy(xpath = "//input[@id= 'search_box_gnav_input']")
     public WebElement searchInputField;
 
+    @FindBy(xpath = "//a[@id = 'gnav20-account-link-id']")
+    public WebElement logInLink;
+
+    @FindBy(xpath = "//a[@id = 'gnav20-eyebrow-link-Business']")
+    public WebElement linkToBusiness;
+
+
+    public BusinessLogInPage clickOnLogInLink() {
+        safeClickOnElement(linkToBusiness);
+        safeClickOnElement(logInLink);
+        return new BusinessLogInPage();
+    }
+
     public SearchPage enterItemForSearch(String searchTerm) throws AWTException {
         clearSendKeysToElement(searchInputField, searchTerm);
         searchInputField.sendKeys(Keys.RETURN);
         return new SearchPage();
     }
 
-    public void clickOnMainSearchButton(){
+    public void clickOnMainSearchButton() {
         safeClickOnElement(searchButtonMainPage);
     }
 
-    public BatteriesAndChargersPage clickOnChargersOption(){
+    public BatteriesAndChargersPage clickOnChargersOption() {
         safeClickOnElement(linkToChargesMenu);
         return new BatteriesAndChargersPage();
     }
 
-    public void clickOnAccessoriesLink(){
+    public void clickOnAccessoriesLink() {
         safeClickOnElement(linkToAccessories);
     }
 
-    public void clickOnShopButton(){
+    public void clickOnShopButton() {
         safeClickOnElement(shopMenuButton);
     }
 
-    public Homepage(){
-        PageFactory.initElements(driver,this);
+    public Homepage() {
+        PageFactory.initElements(driver, this);
 
     }
 }
