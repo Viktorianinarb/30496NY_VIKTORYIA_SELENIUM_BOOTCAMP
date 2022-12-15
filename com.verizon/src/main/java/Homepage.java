@@ -29,6 +29,13 @@ public class Homepage extends BasePage {
     @FindBy(xpath = "//a[@id = 'gnav20-eyebrow-link-Business']")
     public WebElement linkToBusiness;
 
+    @FindBy(xpath = "//a[@data-label='Stores']")
+    public WebElement linkToStoreLocations;
+
+    public LocationSearchPage clickOnStoreLocationsLink(){
+        safeClickOnElement(linkToStoreLocations);
+        return new LocationSearchPage();
+    }
 
     public BusinessLogInPage clickOnLogInLink() {
         safeClickOnElement(linkToBusiness);
