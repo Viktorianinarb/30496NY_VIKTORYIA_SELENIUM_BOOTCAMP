@@ -23,6 +23,15 @@ public class Homepage extends BasePage {
     @FindBy(xpath = "//div[@id = 'emailSigningNotify']")
     public WebElement invalidInputMessage;
 
+    @FindBy(xpath = "//ul[@class = 'navMenuUL']/li/a[contains(text(), 'Tools')]")
+    public WebElement toolsButton;
+
+    public ToolsPage clickOnToolsMenu(){
+        safeClickOnElement(toolsButton);
+        return new ToolsPage();
+    }
+
+
     public Object getErrorMessage(String email){
         if (email.contains("@")) {
             return getTrimmedElementText(errorMessage);
