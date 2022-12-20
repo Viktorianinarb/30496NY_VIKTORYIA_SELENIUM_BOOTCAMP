@@ -26,6 +26,14 @@ public class Homepage extends BasePage {
     @FindBy(xpath = "//ul[@class = 'navMenuUL']/li/a[contains(text(), 'Tools')]")
     public WebElement toolsButton;
 
+    @FindBy(xpath = "//a[contains(text(), 'Academy')]")
+    public WebElement linkToAcademy;
+
+    public AcademyPage switchToAcademy(){
+        safeClickOnElement(linkToAcademy);
+        return new AcademyPage();
+    }
+
     public ToolsPage clickOnToolsMenu(){
         safeClickOnElement(toolsButton);
         return new ToolsPage();
