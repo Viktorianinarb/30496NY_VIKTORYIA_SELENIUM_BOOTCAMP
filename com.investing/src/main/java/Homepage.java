@@ -29,6 +29,14 @@ public class Homepage extends BasePage {
     @FindBy(xpath = "//a[contains(text(), 'Academy')]")
     public WebElement linkToAcademy;
 
+    @FindBy(xpath = "//a[contains(text(), 'Mortgage Calculator')]")
+    public WebElement linkToMortgageCalculator;
+
+    public MortgageCalculatorPage goToMortgageCalculator(){
+        safeClickOnElement(linkToMortgageCalculator);
+        return new MortgageCalculatorPage();
+    }
+
     public AcademyPage switchToAcademy(){
         safeClickOnElement(linkToAcademy);
         return new AcademyPage();
