@@ -17,14 +17,7 @@ public class SearchPropertyResultPage extends BasePage {
             }
         } return true;
     }
-//        public void clickOnMenuChoiceSelectionLinks(String link){
-//            for(WebElement element : menuChoiceSelectionLinks){
-//                if(getTrimmedElementText(element).equals(link)){
-//                    safeClickOnElement(element);
-//                    break;
-//                }
-//            }
-//        }
+
 
 
     public SearchPropertyResultPage() {
