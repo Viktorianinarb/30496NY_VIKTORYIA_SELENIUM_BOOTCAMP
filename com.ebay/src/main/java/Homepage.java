@@ -18,6 +18,14 @@ public class Homepage extends BasePage {
     @FindBy(xpath = "//input[@id = 'gh-btn']")
     public WebElement searchButton;
 
+    @FindBy(xpath ="//li[@data-currenttabindex = '5']")
+    public WebElement linkToToys;
+
+    public ToysPage getToysPage(){
+        safeClickOnElement(linkToToys);
+        return new ToysPage();
+    }
+
     public SearchResultsPage clickOnSearchButton(){
         safeClickOnElement(searchButton);
         return new SearchResultsPage();
